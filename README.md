@@ -1,5 +1,4 @@
 <h1> Red-black tree analyze program</h1>
-<p> The program can create a RBTree and add and delete data from it </p>
 
 ## Table of Contents
 
@@ -17,9 +16,9 @@ This program is written in C.
 
 ## Introduction
 
-This program analyzes a Red-black tree.
-The program guarantees searching, insertion and deletion in O(log(n)) time.
-The program can rearranged and repainted the tree when it's modified.
+This program analyzes a Red-black tree.<br>
+It guarantees searching, insertion and deletion in O(log(n)) time.<br>
+When the tree is modified, the new tree is rearranged and repainted.
 <br>
 
 
