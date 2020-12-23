@@ -1,12 +1,12 @@
 <h1> Red-black tree analyze program</h1>
+<p> The program can create a RBTree and add and delete data from it </p>
 
 ## Table of Contents
 
 1. [Language](#Language)
 2. [Introduction](#introduction)
-3. [Library functions](#Library-functions)
+3. [Api](#Api)
 4. [Supported OS](#supported-os)
-5. [Internal tools](#Internal-tools)
 
 ---
 
@@ -17,39 +17,33 @@ This program is written in C.
 
 ## Introduction
 
-This program analyzes a Red-black tree. The program
-This is a static library, that creates and manages user-level threads.<br>
-The library implements Round-Robin scheduling alghorithm.<br>
-Each thread can be in one of the following states: RUNNING, BLOCKED and READY.
+This program analyzes a Red-black tree.
+The program guarantees searching, insertion and deletion in O(log(n)) time.
+The program can rearranged and repainted the tree when it's modified.
 <br>
 
-### Benefits
 
-- The user can create, block, resume and terminate threads.
-- The library supports different threads with different priorities, high priority threads will<br>
-  get more time in the CPU when their turn arrive.
-
-## Library functions
+## Api
 
 ```typescript
-int diameter(Tree *myTree, int root)
+int containsRBTree(RBTree *tree, void *data)
 /**
- * This function checks what is the diameter of a tree.
+ * This function searches data in the tree.
  */
 
-int printRoot(Tree *treeToCheck, int numberOfVertexes)
+int addToRBTree(RBTree *tree, void *data)
 /**
- * This function checks if the line's length in the text is valid.
+ * This function addes data to the tree.
  */
 
-void bfs(Tree *myTree, int startVertex)
+RBTree *newRBTree(CompareFunc compFunc, FreeFunc freeFunc)
 /**
- * This function returns the value of the root in the graph.
+ * This function creates a new tree.
  */
 
-void resetTree(Tree *myTree)
+void freeRBTree(RBTree *tree)
 /**
- * This function resets the values in the vertex's children.
+ * This function releases all the tree's data.
  */
 
 ```
@@ -57,9 +51,4 @@ void resetTree(Tree *myTree)
 ## Supported OS
 
 I'm developing on linux and macOS, and the program was tested on linux.
-
-## Internal tools
-
-
-- The following headers are included in the program: 'queue.h' and 'ctype.h'
     
