@@ -4,20 +4,20 @@
 
 1. [Language](#Language)
 2. [Introduction](#introduction)
-3. [Setup](#setup)
-4. [Library functions](#Library-functions)
-5. [Supported OS](#supported-os)
-6. [Internal tools](#Internal-tools)
+3. [Library functions](#Library-functions)
+4. [Supported OS](#supported-os)
+5. [Internal tools](#Internal-tools)
 
 ---
 
 ## Language
 
-This static library is written in C.
+This program is written in C.
 <br>
 
 ## Introduction
 
+This program analyzes a Red-black tree. The program
 This is a static library, that creates and manages user-level threads.<br>
 The library implements Round-Robin scheduling alghorithm.<br>
 Each thread can be in one of the following states: RUNNING, BLOCKED and READY.
@@ -29,53 +29,37 @@ Each thread can be in one of the following states: RUNNING, BLOCKED and READY.
 - The library supports different threads with different priorities, high priority threads will<br>
   get more time in the CPU when their turn arrive.
 
-## Setup
-
-Include the 'uthreads.h' header
-<br>
-
 ## Library functions
 
 ```typescript
-int uthread_init(int *quantum_usecs, int size)
+int diameter(Tree *myTree, int root)
 /**
- * This function initializes the thread library.
+ * This function checks what is the diameter of a tree.
  */
 
-int uthread_spawn(void (*f)(void), int priority)
+int printRoot(Tree *treeToCheck, int numberOfVertexes)
 /**
- * This function creates a new thread, whose entry point is the function f with the signature void f(void).
+ * This function checks if the line's length in the text is valid.
  */
 
-int uthread_change_priority(int tid, int priority)
+void bfs(Tree *myTree, int startVertex)
 /**
- * This function initializes the thread library.
+ * This function returns the value of the root in the graph.
  */
 
-int uthread_terminate(int tid)
+void resetTree(Tree *myTree)
 /**
- * This function changes the priority of the thread with ID tid.
- */
-
-int uthread_block(int tid)
-/**
- *  This function blocks the thread with ID tid.
- */
-
-int uthread_resume(int tid)
-/**
- * This function resumes a blocked thread with ID tid.
+ * This function resets the values in the vertex's children.
  */
 
 ```
 
 ## Supported OS
 
-I'm developing on linux and macOS, and the library was tested on linux.
+I'm developing on linux and macOS, and the program was tested on linux.
 
 ## Internal tools
 
 
-- The library used system calls like 'sigsetjmp', 'siglongjmp' and 'sigprocmask'
-- The following headers are included in the library: 'signal.h' and 'sys/time.h'
+- The following headers are included in the program: 'queue.h' and 'ctype.h'
     
